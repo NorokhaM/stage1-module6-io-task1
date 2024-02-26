@@ -2,7 +2,6 @@ package com.epam.mjc.io;
 
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.IOException;
 
 public class FileReader {
     public Profile getDataFromFile(File file)  {
@@ -20,7 +19,6 @@ public class FileReader {
             Integer age= Integer.parseInt(data[1].split(":")[1].trim());
             String email = data[2].split(":")[1].trim();
             Long phone = Long.parseLong(data[3].split(":")[1].trim());
-            reader.close();
             return new Profile(name, age, email, phone);
         } catch (Exception e) {
             e.printStackTrace();
